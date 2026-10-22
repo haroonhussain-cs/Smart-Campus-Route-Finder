@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Route Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">SC</div>
+        <div>
+            <h1>Smart Campus</h1>
+            <p>Route Finder</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <span class="tag">CAMPUS NAVIGATION SYSTEM</span>
+            <h2>Find your way around campus.</h2>
+            <p>
+                Discover the shortest route between campus buildings
+                using Dijkstra's shortest-path algorithm.
+            </p>
+        </section>
+
+        <section class="route-card">
+            <h3>Plan Your Route</h3>
+            <p class="subtitle">Choose your starting point and destination.</p>
+
+            <div class="form-group">
+                <label for="source">Starting Location</label>
+                <select id="source">
+                    <option value="0">Main Gate</option>
+                    <option value="1">Admin Block</option>
+                    <option value="2">Library</option>
+                    <option value="3">Computer Lab</option>
+                    <option value="4">Cafeteria</option>
+                    <option value="5">Auditorium</option>
+                </select>
+            </div>
+
+            <button type="button" id="swapBtn" class="swap-btn">
+                ↕ Swap locations
+            </button>
+
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination">
+                    <option value="0">Main Gate</option>
+                    <option value="1">Admin Block</option>
+                    <option value="2">Library</option>
+                    <option value="3" selected>Computer Lab</option>
+                    <option value="4">Cafeteria</option>
+                    <option value="5">Auditorium</option>
+                </select>
+            </div>
+
+            <button type="button" id="findBtn" class="find-btn">
+                Find Shortest Route →
+            </button>
+
+            <p id="errorMessage" class="error" role="alert"></p>
+        </section>
+
+        <section id="result" class="result-card" aria-live="polite" hidden>
+            <div class="result-heading">
+                <div>
+                    <span class="tag">YOUR ROUTE</span>
+                    <h3>Shortest Path Found</h3>
+                </div>
+                <span class="success-icon">✓</span>
+            </div>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <span>Total Distance</span>
+                    <strong id="distance">0 m</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Locations</span>
+                    <strong id="stopCount">0</strong>
+                </div>
+            </div>
+
+            <h4>Route Directions</h4>
+            <div id="routeList" class="route-list"></div>
+
+            <button type="button" id="resetBtn" class="reset-btn">
+                Plan Another Route
+            </button>
+        </section>
+
+        <section class="locations-section">
+            <h3>Campus Locations</h3>
+            <p class="subtitle">Explore the buildings available in the system.</p>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <span>🚪</span>
+                    <div><strong>Main Gate</strong><small>Entry point</small></div>
+                </div>
+                <div class="location-card">
+                    <span>🏢</span>
+                    <div><strong>Admin Block</strong><small>Administration</small></div>
+                </div>
+                <div class="location-card">
+                    <span>📚</span>
+                    <div><strong>Library</strong><small>Learning centre</small></div>
+                </div>
+                <div class="location-card">
+                    <span>💻</span>
+                    <div><strong>Computer Lab</strong><small>Practical sessions</small></div>
+                </div>
+                <div class="location-card">
+                    <span>☕</span>
+                    <div><strong>Cafeteria</strong><small>Food and refreshments</small></div>
+                </div>
+                <div class="location-card">
+                    <span>🎤</span>
+                    <div><strong>Auditorium</strong><small>Events and seminars</small></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Smart Campus Route Finder | Java Data Structures Project</p>
+        <p>Powered by Graphs and Dijkstra's Algorithm</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

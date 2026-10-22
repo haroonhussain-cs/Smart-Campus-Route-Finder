@@ -1,0 +1,400 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #f3f6fc;
+    --text: #172554;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 8%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header h1 {
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+.header p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tag {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.welcome h2 {
+    font-size: clamp(27px, 5vw, 38px);
+    line-height: 1.25;
+    margin: 12px 0;
+}
+
+.welcome p,
+.subtitle {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.welcome p {
+    max-width: 570px;
+    margin: auto;
+}
+
+.route-card,
+.result-card,
+.locations-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.route-card h3,
+.locations-section h3 {
+    font-size: 21px;
+}
+
+.subtitle {
+    margin-top: 4px;
+    margin-bottom: 23px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: white;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.swap-btn {
+    display: block;
+    margin: 0 0 15px auto;
+    border: none;
+    background: #eff6ff;
+    color: var(--primary);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.find-btn,
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.find-btn {
+    margin-top: 8px;
+    color: white;
+    background: var(--primary);
+}
+
+.find-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.swap-btn:hover {
+    background: #dbeafe;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.result-card {
+    border-top: 4px solid #16a34a;
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.result-heading h3 {
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+.success-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.stat-box {
+    background: #f8fafc;
+    padding: 17px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.stat-box span {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.stat-box strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 25px;
+    color: var(--primary);
+}
+
+.result-card h4 {
+    margin: 10px 0 15px;
+}
+
+.route-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.route-step {
+    display: flex;
+    align-items: stretch;
+    gap: 13px;
+    min-height: 64px;
+}
+
+.route-marker-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25px;
+    flex-shrink: 0;
+}
+
+.route-marker {
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--primary);
+    background: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.route-marker.start,
+.route-marker.end {
+    color: white;
+    background: var(--primary);
+}
+
+.route-line {
+    width: 2px;
+    flex: 1;
+    min-height: 24px;
+    background: #bfdbfe;
+}
+
+.route-step:last-child .route-line {
+    display: none;
+}
+
+.route-info {
+    padding-bottom: 18px;
+}
+
+.route-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.route-info small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.reset-btn {
+    margin-top: 12px;
+    background: #eff6ff;
+    color: var(--primary);
+}
+
+.reset-btn:hover {
+    background: #dbeafe;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.location-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 14px 10px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.location-card > span {
+    font-size: 24px;
+}
+
+.location-card strong,
+.location-card small {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.location-card strong {
+    font-size: 12px;
+}
+
+.location-card small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+footer {
+    text-align: center;
+    padding: 24px 15px;
+    color: var(--muted);
+    font-size: 12px;
+    background: white;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .route-card,
+    .result-card,
+    .locations-section {
+        padding: 20px;
+    }
+
+    .location-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats {
+        gap: 9px;
+    }
+
+    .stat-box {
+        padding: 12px;
+    }
+
+    .stat-box strong {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 360px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+}
